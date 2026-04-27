@@ -26,7 +26,8 @@ SECRET_KEY = "django-insecure-$5um761e&8mq8&#6_v45ejru-r%(xj(*3=ha%a!6otb=g*azgo
 # SECURITY WARNING: don't run     x with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+# Need to update this later
+ALLOWED_HOSTS = ["www.hasmeed.com", "hasmeed.com", "localhost:8001"]
 
 # TEMPLATES = [
 #     {
