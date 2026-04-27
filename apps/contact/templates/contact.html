@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load ext_links %}
+
+{% block title %}{{ block.super }} | Contact Me{% endblock title %}
+
+{% block content %}
+  <article class="blog-post px-3 py-3 p-md-5">
+    <div class="container theme-bg-light single-col-max-width mt-3">
+      <section class="cta-section py-5">
+        <div class="container text-center single-col-max-width">
+          <div class="intro">
+            <p>Please fill in the contact form below or send me an email at
+              <a href="{% email_me_link %}" class="theme-link">{% email_me_text %}</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="contact-section px-3">
+        <div class="container">
+          <form method="POST" enctype="multipart/form-data" id="contact-form"
+            class="contact-form col-lg-8 mx-lg-auto">
+            {% csrf_token %}
+            <h3 class="text-center mb-3">Get In Touch</h3>
+            <!-- First and Last Name -->
+            <div class="form-group">
+              <div class="form-row mt-2">
+                <!-- First Name -->
+                <div class="col-6">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><span class="fas fa-user"></span></div>
+                    </div>
+                  {% render_field form.first_name class+="form-control" placeholder="First Name" %}
+                  </div>
+                </div>
+                <!-- Last Name -->
+                <div class="col-6">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><span class="fas fa-user"></span></div>
+                    </div>
+                  {% render_field form.last_name class+="form-control" placeholder="Last Name" %}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email Address -->
+              <div class="form-row mt-3">
+                <div class="col-12">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><span class="fas fa-envelope"></span></div>
+                    </div>
+                    {% render_field form.email class+="form-control" placeholder="Email" %}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="form-row mt-3">
+                <div class="col-12">
+                  <div class="input-group">
+                    {% render_field form.message class+="form-control" placeholder="Enter your message here..." %}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-group">
+                <div class="form-row mt-3">
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-block btn-primary py-2">
+                      <i class="fa fa-envelope-open"></i>
+                      Send Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- reCAPTCHA Field -->
+              <div class="form-row mt-3">
+                <div class="col-12">
+                  <div class="input-group">
+                    {% render_field form.captcha class+="form-control" %}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="cta-section py-3">
+        <div class="container text-center single-col-max-width">
+          <div class="intro">
+            <p>Feel free to connect using the social media channels below.</p>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mb-3">
+                <a class="github" href="{% github_profile_link %}" target="_blank" rel="noreferrer">
+                  <i class="fab fa-github-alt fa-fw fa-lg"></i>
+                </a>
+              </li>
+              <!-- <li class="list-inline-item mb-3">
+                <a class="stack-overflow" href="{% stack_overflow_profile_link %}" target="_blank" rel="noreferrer">
+                  <i class="fab fa-stack-overflow fa-fw fa-lg"></i>
+                </a>
+              </li> -->
+              <li class="list-inline-item mb-3">
+                <a class="linkedin" href="{% linkedin_profile_link %}" target="_blank" rel="noreferrer">
+                  <i class="fab fa-linkedin-in fa-fw fa-lg"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="cta-section text-muted py-1">
+        <div class="container text-center single-col-max-width">
+          <div class="intro mb-5">
+            This site is protected by reCAPTCHA and the Google
+            <a href="https://policies.google.com/privacy" class="theme-link">Privacy Policy</a> and
+            <a href="https://policies.google.com/terms" class="theme-link">Terms of Service</a> apply.
+          </div>
+        </div>
+      </section>
+    </div>
+  </article>
+{% endblock content %}

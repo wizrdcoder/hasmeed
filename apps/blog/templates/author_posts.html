@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ block.super }} | Posts by {{ display_name }}{% endblock title %}
+
+{% block content %}
+  {% include 'components/search_bar.html' %}
+  <h6 class="text-center mt-5">
+      {{ paginator.count }} post{{ paginator.count|pluralize }} written by {{ display_name }}
+  </h6>
+
+  <section class="blog-list px-3 py-5 p-md-5">
+    <div class="container">
+      <div class="row">
+        {% for post in posts %}
+          {% include 'components/post_card.html' %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% if is_paginated %}{% include 'components/pagination_nav.html' %}{% endif %}
+{% endblock content %}

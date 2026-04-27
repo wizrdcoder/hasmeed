@@ -1,0 +1,21 @@
+<!-- Messages -->
+<div class="d-flex flex-column col-12 container text-center mt-3">
+  <blockquote class="quote-content text-left">
+    {% if messages %}
+      <div class="alert alert-warning col-8 mb-0 container" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="messages text-left">
+          <ul class="no-bullets mt-2">
+            {% for message in messages %}
+              <li>
+                <font color="red mb-2">{{ message }}</font>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+  </blockquote>
+</div>

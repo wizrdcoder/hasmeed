@@ -1,0 +1,34 @@
+{% load ext_links %}
+
+<div class="bottom-bar">
+  <div class="container">
+    <div class="row">
+      <div class="social-container col-md-6 col-12 py-2">
+        <ul class="social-left list-inline">
+          <li class="list-inline-item">
+            <small>&copy 2018 - {% now 'Y' %} hasmeed</small>
+          </li>
+        </ul>
+      </div>
+      <div class="social-container col-md-6 col-12 py-2">
+        <ul class="social-right list-inline">
+          <li class="list-inline-item">
+            <a href="{% linkedin_profile_link %}" target="_blank" rel="noreferrer">
+              <i class="fab fa-linkedin-in mr-2"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="{% stack_overflow_profile_link %}" target="_blank" rel="noreferrer">
+              <i class="fab fa-stack-overflow mr-2"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="{% github_profile_link %}" target="_blank" rel="noreferrer">
+              <i class="fab fa-github mr-2"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

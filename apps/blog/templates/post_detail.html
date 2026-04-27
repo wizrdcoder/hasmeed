@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- Atom One Dark Syntax Highlighting CSS File -->
+{% block additional_css %}
+  <link rel="stylesheet" href="{% static 'highlight/styles/atom-one-dark.css' %}">
+{% endblock additional_css %}
+
+{% block title %}{{ block.super }} | {{ post.title }}{% endblock title %}
+
+{% block content %}
+  <article class="blog-post px-3 py-5 p-md-5">
+    <div class="container single-col-max-width">
+      <header class="blog-post-header">
+        <h2 class="title mb-2">{{ post.title }}</h2>
+      </header>
+
+      <!-- Post Author and Meta Data -->
+      {% include "components/meta_data.html" %}
+
+      <div class="blog-post-body">
+        <!-- Post Image and Caption -->
+        {% include 'components/image.html' %}
+
+        <!-- Post Content -->
+        <p class="article-content">{{ post.content|safe }}</p>
+
+        {% if post.reference_url %}
+          <div class="alert alert-info" role="alert">
+            <a class="theme-link" href="{{ post.reference_url }}" 
+              id="reference_url">{{ post.reference_url }}</a>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Nav Links -->
+      {% include 'components/post_detail_nav.html' %}
+    </div>
+  </article>
+{% endblock content %}
+
+<!-- CDN Link for Syntax Highlighting JS from highlightjs.org/download -->
+{% block additional_js %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+{% endblock additional_js %}

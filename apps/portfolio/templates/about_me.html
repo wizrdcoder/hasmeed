@@ -1,0 +1,355 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ block.super }} | About Me{% endblock title %}
+
+{% block content %}
+  <!--- Title and Subtitle Section -->
+  <section class="cta-section theme-bg-light py-5">
+    <div class="container single-col-max-width">
+      <h2 class="heading text-center">About Me</h2>
+      <div class="project-intro text-center">
+        <p class="mb-0 lead">
+          An informal page to learn more about me and my professional journey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!--- Professional Journey -->
+  <section class="project px-3 mb-3 mt-5">
+    <div class="container single-col-max-width">
+      <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+        <div class="media-body">
+          <div>
+            <h5 class="font-weight-bold mb-4">My Journey</h5>
+          </div>
+          <div class="client-bio site-article">
+            <div class="client-info">
+              <p>
+                I started my career where many engineers should start but often do not — at the database layer.
+                My early years were spent designing and developing database systems using Oracle 10g, 11g, SQL Server, and other relational technologies. That foundation shaped how I think about software. I learned that performance, scalability, and reliability begin with data modeling. If the data layer is weak, everything above it eventually collapses.
+              </p>
+
+              <p>
+                Around 2010, I moved into application development using C# and the .NET ecosystem. I built desktop applications with WPF and Silverlight, and later web systems with ASP.NET and .NET Core. This period expanded my understanding of full system design — from database to user interface.
+              </p>
+              <p>
+                In 2012, I pursued a Diploma in Statistics at the Federal School of Statistics. That decision sharpened my analytical thinking. Statistics trained me to question assumptions, validate results, and approach problems with structure rather than guesswork.
+              </p>
+              <p>
+                After completing my diploma, I spent two years teaching computer science students at a college. Teaching was transformative. It forced me to simplify complex concepts, refine my thinking, and truly understand the fundamentals behind the code.
+              </p>
+              <div class="mt-4">
+                <h5 class="font-weight-bold mb-4">India: Growth and Exposure</h5>
+              </div>
+              <p>
+                In 2015, I moved to India to pursue a BSc in Computer Applications at Bangalore University, completing the degree between 2015 and 2018.
+              </p>
+              <p>
+While studying, and even after graduating, I worked with several companies as a software engineer. Those years were intense. I was learning formally during the day and building production systems in real environments. Some projects even required travel to places like the Maldives while I was still based in India. It was a period of rapid growth and exposure.
+              </p>
+              <p>
+Before moving to India, I had already begun exploring Python. But around 2017, I made a deliberate decision to focus on it seriously. I immersed myself in backend development using Django, FastAPI, and modern API design principles. Python felt expressive and powerful. It allowed me to move quickly without sacrificing structure.
+              </p>
+              <p>
+                Between 2017 and 2019, I also worked as a contractor for a US based client on data analytics and machine learning projects. That experience combined my statistics background with engineering practice. I worked on real datasets, built analytical pipelines, and contributed to ML driven solutions. It strengthened my ability to build systems informed by data, not guesswork.
+              </p>
+              <p>
+                In 2019, I built a backend system singlehandedly for a real estate tech company based in Saudi Arabia using Laravel and MySQL. It became the backbone of their operations. After that engagement, I returned fully to Python and backend architecture, where I have focused ever since.
+              </p>
+              <div class="mt-4">
+                <h5 class="font-weight-bold mb-4">Dubai to London: Senior Engineering Leadership</h5>
+              </div>
+              <p>
+                In 2022, I relocated to Dubai and joined an Insurtech company as a Senior Software Engineer. That was a defining chapter.
+              </p>
+              <p>
+                For three years, I worked on production systems at scale — building and refining backend services, improving architecture, and contributing to systems that supported significant business growth. These were not side projects. These were revenue generating systems handling thousands of users.              </p>
+              <p>
+                Later, I relocated to England and continued working with the same company in their London office. The transition reinforced something important about my career — my work travels well. Solid engineering principles translate across teams, regions, and industries.
+              </p>
+              <p>
+                In January 2026, I concluded that chapter, having contributed across multiple geographies and stages of growth.
+              </p>
+              <div class="mt-4">
+                <h5 class="font-weight-bold mb-4">What Defines My Work</h5>
+              </div>
+              <p>
+                Today, I specialize in backend engineering and system architecture using Python, particularly Django and FastAPI.
+              </p>
+              <p>
+                I build systems that:
+                <ul>
+                  <li>Scale reliably</li>
+                  <li>Support complex business workflows</li>
+                  <li>Integrate with external systems</li>
+                  <li>Ensure data security and compliance</li>
+                  <li>Scale with business growth</li>
+                </ul>
+              </p>
+              <p>
+                My background across databases, statistics, teaching, analytics, .NET, PHP, and Python gives me range. I understand systems from the storage layer up to the API surface. I do not just write endpoints. I design foundations.
+              </p>
+              <p>
+                I value clarity over cleverness. Structure over shortcuts. Engineering decisions backed by reasoning, not trends.
+              </p>
+              <p>
+                At my core, I am still that database engineer who believes everything begins with well designed data.
+              </p>
+              <p>
+                The difference now is scale, responsibility, and experience.
+              </p>
+              <p>And I am just getting started.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="col-8 mt-5 mb-5">
+
+  <section class="faq-section mb-5">
+    <div class="container single-col-max-width">
+      <h3 class="text-center mb-4">10 Questions to Learn More About Me</h3>
+      <div class="text-center mb-5">
+        Here are a few answers to questions to give you more of a picture about me as a person.
+        They start with professional questions and then move onto more personal ones.
+      </div>
+      <div id="faq-accordion" class="faq-accordion mx-auto">
+
+        <!-- PROFESSIONAL QUESTIONS -->
+        <!-- Question 1 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq1" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                Other than Python, what other programming skills do you have?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq1">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                Python is my primary language, especially for backend systems using Django and FastAPI. But I’m not limited to it.
+              </p>
+              <p>
+                
+I’ve worked extensively with PHP, particularly Laravel, where I built a complete backend system for a real estate tech company. Earlier in my career, I worked with C# and the .NET ecosystem, building both desktop and web applications. I also work with GraphQL when the architecture calls for flexible query patterns.
+              </p>
+              <p>
+                My foundation is broad. I understand relational databases deeply, having started my career with Oracle and SQL Server. That database-first background influences how I design APIs and systems today.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq2" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                Besides programming and Data Analytics, do you have any other computer skills?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq2">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                Yes. Strong database design and optimization is one of my core strengths. I care about indexing strategy, schema design, query performance, and long-term scalability.
+              </p>
+              <p>
+                I’m also comfortable with deployment environments, containerization, and debugging production issues. I don’t just write code. I understand how systems behave in real environments.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq3" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                What first got you interested in web development?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq3">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                Curiosity.
+              </p>
+              <p>
+                Around 2010, I started building simple static websites using HTML, CSS, and JavaScript. I also experimented with WordPress. Seeing something I built appear in a browser and be accessible to others was powerful.
+              </p>
+              <p>
+                What kept me in web development was not the visuals. It was the logic behind it. The backend. The structure. The idea that you could design systems that serve thousands of users consistently.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq4" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                Do you take the time to work on your personal and professional development?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq4">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                Absolutely. I’ve invested in formal education across statistics and computer science, but I’ve also grown through real-world engineering.
+              </p>
+              <p>
+                Relocating across countries, working in different environments, and building production systems that generate serious revenue forced me to evolve. I continuously refine my architecture skills, scalability thinking, and backend expertise.
+              </p>
+              <p>
+                Growth for me is not just about learning new frameworks. It’s about improving judgment.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq5" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                What developer skills do you want to learn next?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq5">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                I want to go deeper into distributed systems and large-scale architecture.
+              </p>
+              <p>
+                I’m also very interested in AI engineering. Not just using AI tools, but understanding how intelligent systems are built, deployed, and integrated into scalable products. With my background in statistics, backend engineering, and data work, AI engineering feels like a natural next evolution.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="col-8 mt-5 mb-5">
+
+        <!-- PERSONAL QUESTIONS -->
+        <!-- Question 6 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq6" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                Outside of programming and other professional interests, what else do you like to do?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq6">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                I enjoy gaming. It helps me disconnect and reset mentally. Strategy based games especially appeal to me because they mirror problem solving in engineering.
+              </p>
+              <p>
+                I also enjoy music and quiet time. I’m not someone who needs constant noise. I value focus.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq7" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                Could you name someone you admire? And why?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq7">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                I admire people who build durable systems and companies quietly. Engineers and founders who prioritize long-term structure over short-term hype.
+              </p>
+              <p>
+                Sustainable success impresses me more than viral moments.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq8" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                Do you like sports?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq8">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                Not particularly. I appreciate discipline and competition, but I’m not deeply invested in sports culture.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq9" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                What is your favourite film?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq9">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                Interstellar.
+              </p>
+              <p>
+                Anything involving time travel, the universe, or complex scientific ideas immediately captures my attention. I’m drawn to stories that explore space, time, relativity, and existential questions. Films that challenge perception and stretch the mind resonate deeply with me.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="card border-0 mb-3">
+          <div class="card-header border-0 p-3 theme-bg-light">
+            <h4 class="card-title mb-0">
+              <a data-parent="#faq-accordion" data-toggle="collapse" class="card-toggle collapsed"
+                href="#faq10" aria-expanded="false"><i class="fas fa-chevron-down mr-2"></i>
+                OK, what about music? What music do you enjoy?
+              </a>
+            </h4>
+          </div>
+          <div class="card-collapse collapse" id="faq10">
+            <div class="site-article p-3 pt-0 theme-bg-light">
+              <p>
+                I enjoy country music, R&B, and classic Rap songs. There’s depth and storytelling in those genres that I appreciate.
+              </p>
+              <p>
+                Music, for me, is less about trends and more about mood and meaning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

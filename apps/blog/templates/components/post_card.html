@@ -1,0 +1,50 @@
+{% load humanize %}
+
+<div class="col-md-4 mb-3">
+  <div class="card blog-post-card">
+    <a class="theme-link" href="{{ post.get_absolute_url }}">
+      {% comment %} <img class="card-img-top img-fluid" src="{{ post.image.url }}"> {% endcomment %}
+    </a>
+    <div class="card-body">
+      <h6 class="card-title">
+        <a class="theme-link" href="{{ post.get_absolute_url }}">
+          {{ post.title }}
+        </a>
+      </h6>
+      <div class="article-metadata">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                <div class="mb-1">
+                  <a href="{% url 'blog:author_posts' post.author.get_username %}"
+                     class="theme-link font-weight-bolder"
+                  >
+                    {{ post.author.profile.display_name }}
+                  </a>
+                </div>
+                <small class="text-muted">
+                  <ul class="no-bullets">
+                    <li><strong>Published:</strong> {{ post.publish_date|date:"D d-M-y" }}</li>
+                    <li><strong>Updated:</strong> {{ post.updated_date|date:"D d-M-y" }}</li>
+                    <li>
+                      <strong>Categories:</strong>
+                      {% for category in post.categories.all|slice:":2" %}
+                        <a class="theme-link" href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                        {% if not forloop.last %}  |  {% endif %}
+                      {% endfor %}
+                    </li>
+                    <li>
+                      <span class="time">{{ post.word_count|intcomma }} words</span>  |
+                      <span class="time">{{ post.reading_time }} min read</span>
+                    </li>
+                  </ul>
+                </small>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

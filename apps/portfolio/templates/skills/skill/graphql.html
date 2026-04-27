@@ -1,0 +1,88 @@
+{% load static %}
+
+<section class="project px-3 mb-3">
+    <div class="container">
+      <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+        <img class="project-thumb mb-3 mb-md-0 mr-md-5 rounded d-none d-md-inline-block"
+             src="{% static 'assets/images/graphql.png' %}" alt="GraphQL"
+        >
+        <div class="media-body">
+          <div class="client-info">
+            <ul class="client-meta list-unstyled">
+              <li class="mb-2"><strong><h5 id="graphql">GraphQL</h5></strong></li>
+              <li>
+                <i class="fa fa-tags mr-1"></i>
+                API Architecture & Data Layer Design
+              </li>
+            </ul>
+            <hr>
+            <div class="client-bio mb-4">
+              <p>
+                I design and implement GraphQL APIs for scalable, data-intensive applications,
+                enabling clients to request precisely the data they need while maintaining
+                strong architectural boundaries and performance discipline.
+              </p>
+  
+              <p>
+                My GraphQL expertise includes:
+                <ul class="mb-0 no-bullets">
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Designing well-structured schemas with clear type definitions,
+                    relationships, and domain-driven modeling.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Implementing queries, mutations, and subscriptions with clean,
+                    maintainable resolver logic.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Efficient database interaction using batching techniques and
+                    query optimization strategies to prevent N+1 problems.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Role-based authorization and field-level access control
+                    to enforce security across complex schemas.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Integration with Python backends using FastAPI and
+                    asynchronous execution for high concurrency environments.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Schema evolution and versioning strategies that support
+                    long-term product growth without breaking clients.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Real-time capabilities using subscriptions for event-driven systems.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    API performance monitoring, complexity analysis,
+                    and query depth limiting to maintain stability at scale.
+                  </li>
+  
+                </ul>
+              </p>
+  
+              <p>
+                I approach GraphQL as an architectural layer, not just a query language.
+                The objective is to create a flexible yet controlled data contract that
+                scales cleanly as application complexity grows.
+              </p>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {% block additional_js %}
+  <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+  {% endblock additional_js %}
+  

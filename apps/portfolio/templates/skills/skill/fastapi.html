@@ -1,0 +1,98 @@
+{% load static %}
+
+<section class="project px-3 mb-3">
+    <div class="container">
+      <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+        <img class="project-thumb mb-3 mb-md-0 mr-md-5 rounded d-none d-md-inline-block"
+        src="{% static 'assets/images/fastapi.png' %}" alt="FastAPI"
+        >
+        <div class="media-body">
+          <div class="client-info">
+            <ul class="client-meta list-unstyled">
+              <li class="mb-2"><strong><h5 id="fastapi">FastAPI</h5></strong></li>
+              <li>
+                <i class="fa fa-tags mr-1"></i>
+                Backend API Development
+              </li>
+            </ul>
+            <hr>
+            <div class="client-bio mb-4">
+              <p>
+                I have built multiple production-grade applications using FastAPI including an event and ticketing platform,
+                a telehealth API-driven system, and other high-performance backend services.
+                My focus with FastAPI is clean architecture, performance, and long-term maintainability.
+              </p>
+  
+              <p>
+                My FastAPI expertise includes:
+                <ul class="mb-0 no-bullets">
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Designing scalable RESTful APIs with proper routing structure, dependency injection,
+                    and modular application layout.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Implementing robust authentication and authorization using JWT, OAuth2,
+                    role-based access control, and secure token management.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Advanced Pydantic schema design for strict request and response validation,
+                    data transformation, and serialization control.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Asynchronous programming using async and await for high-concurrency systems,
+                    including integration with external APIs and third-party services.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Database integration using SQLAlchemy and PostgreSQL with proper session
+                    management, optimized queries, indexing strategy, and transaction handling.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Background task processing and job queues using Celery and Redis
+                    for scheduled jobs, notifications, and long-running processes.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    API documentation and schema customization using OpenAPI and Swagger,
+                    ensuring clean and developer-friendly interfaces.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Integration with payment gateways, messaging services, and third-party healthcare systems.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Writing structured middleware for logging, monitoring, error handling,
+                    and request lifecycle control.
+                  </li>
+  
+                  <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                    Containerization and deployment-ready configuration using Docker,
+                    environment-based settings management, and production tuning.
+                  </li>
+  
+                </ul>
+              </p>
+  
+              <p>
+                I approach FastAPI projects with a strong emphasis on architecture.
+                The goal is not just to deliver endpoints, but to build systems that can
+                scale cleanly as traffic and complexity increase.
+              </p>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {% block additional_js %}
+  <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+  {% endblock additional_js %}
+  

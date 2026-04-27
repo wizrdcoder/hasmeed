@@ -1,0 +1,82 @@
+{% load static %}
+
+<section class="project px-3 mb-3">
+  <div class="container">
+    <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+      <img class="project-thumb mb-3 mb-md-0 mr-md-5 rounded d-none d-md-inline-block"
+        src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/skills/postgresql.png" alt="PostgreSQL">
+      <div class="media-body">
+        <div class="client-info">
+          <ul class="client-meta list-unstyled">
+            <li class="mb-2"><strong><h5 id="postgres">PostgreSQL</h5></strong></li>
+            <li>
+              <i class="fa fa-tags mr-1"></i>
+              Database Architecture, Optimization & Spatial Data
+            </li>
+          </ul>
+          <hr>
+          <div class="client-bio mb-4">
+            <p>
+              PostgreSQL is my primary database engine for production systems.
+              My background in database design goes beyond ORM usage. I focus on
+              schema structure, indexing strategy, query performance, and long term data integrity.
+            </p>
+
+            <p>
+              My PostgreSQL expertise includes:
+              <ul class="mb-0 no-bullets">
+
+                <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                  Designing normalized and performance oriented schemas with proper
+                  constraints, foreign keys, indexing, and transactional integrity.
+                </li>
+
+                <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                  Query optimization using execution plan analysis, composite indexes,
+                  partial indexes, and advanced SQL constructs.
+                </li>
+
+                <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                  Implementing full text search using native PostgreSQL search vectors
+                  and ranking strategies.
+                </li>
+
+                <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                  Building and managing multi tenant architectures with secure
+                  data isolation and role based access control.
+                </li>
+
+                <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                  Working with PostGIS for geospatial data modeling, spatial indexing,
+                  and location based queries.
+                </li>
+
+                <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                  Database migration planning, troubleshooting schema conflicts,
+                  and direct inspection using CLI tools and database clients.
+                </li>
+
+                <li class="mb-2"><i class="fas fa-check fa-fw mr-2"></i>
+                  Docker based database provisioning with secure environment configuration
+                  for development, testing, and production environments.
+                </li>
+
+              </ul>
+            </p>
+
+            <p>
+              I approach database design as a foundational engineering discipline.
+              A well structured database reduces application complexity,
+              improves performance, and enables systems to scale predictably.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% block additional_js %}
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+{% endblock additional_js %}

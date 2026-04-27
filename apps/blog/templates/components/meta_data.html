@@ -1,0 +1,57 @@
+{% load humanize %}
+
+<div class="article-metadata mt-1">
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>
+          {% comment %} <img class="rounded-circle article-img" src="{{ author.profile.profile_picture.url }}" /> {% endcomment %}
+        </td>
+        <td>
+          <ul class="no-bullets">
+            <!-- Author Name or Username -->
+            <li>
+              <a class="theme-link" href="{% url 'blog:author_posts' author.get_username %}">
+                <strong>{{ author.profile.display_name }}</strong>
+              </a>
+            </li>
+
+            <!-- Published and Updated Dates -->
+            <li>
+              <small class="text-muted">
+                <strong>Published:</strong>
+                {{ post.publish_date|date:"D d-M-y" }} ({{ post.publish_date|timesince }} ago) |
+                <strong>Updated:</strong>
+                {{ post.updated_date|date:"D d-M-y" }} ({{ post.updated_date|timesince }} ago)
+              </small>
+            </li>
+
+            <!-- Post Categories -->
+            <li>
+              <small class="text-muted">
+                <strong>Categories:</strong>
+                {% for category in post.categories.all %}
+                  <a class="theme-link" href="{{ category.get_absolute_url }}">
+                    {{ category.name }}
+                  </a>
+                {% if not forloop.last %} | {% endif %} {% endfor %}
+              </small>
+            </li>
+
+            <!-- Word Count, Reading Time, and Update/Delete Links (if authenticated) -->
+            <li>
+              <small class="text-muted">
+                <span class="time">{{ post.word_count|intcomma }} words</span> |
+                <span class="time">{{ post.reading_time }} min read</span>
+                {% if user.is_authenticated and request.user == author %} |
+                  <a class="theme-link" href="{% url 'blog:post_update' post.slug %}">Update</a> |
+                  <a class="theme-link" href="{% url 'blog:post_delete' post.slug %}">Delete</a>
+                {% endif %}
+              </small>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
