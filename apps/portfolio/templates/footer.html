@@ -40,6 +40,16 @@
                   <i class="fas fa-caret-right mr-2"></i>Privacy Policy
                 </a>
               </li> {% endcomment %}
+              <li>
+                <a class="theme-link" href="{% url 'portfolio' %}">
+                  <i class="fas fa-caret-right mr-2"></i>Portfolio
+                </a>
+              </li>
+              <li>
+                <a class="theme-link" href="{% url 'cv' %}">
+                  <i class="fas fa-caret-right mr-2"></i>CV
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -48,22 +58,22 @@
             <h6>Get in Touch</h6>
             <ul class="list-unstyled">
               <li>
-                {% comment %} <a href="{% google_maps_location_link %}" class="theme-link" target="_blank" rel="noreferrer">
+                <a href="#" class="theme-link" target="_blank" rel="noreferrer">
                   <i class="fa fa-map-marker mr-3"></i>England, UK
-                </a> {% endcomment %}
+                </a>
               </li>
               <li>
                 <a class="theme-link"><i class="fas fa-mobile mr-3"></i>+44 (0)7564 548141</a>
               </li>
-              {% comment %} <li>
+              <li>
                 <a href="{% email_me_link %}" class="theme-link">
                   <i class="fa fa-envelope mr-3"></i>Email Me
                 </a>
-              </li> {% endcomment %}
+              </li>
               <li>
-                {% comment %} <a href="{% url 'contacts:contact' %}" class="theme-link">
+                <a href="{% url 'contact:contact' %}" class="theme-link">
                   <i class="fas fa-paper-plane mr-3"></i>Contact Form
-                </a> {% endcomment %}
+                </a>
               </li>
             </ul>
           </div>

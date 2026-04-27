@@ -3,6 +3,7 @@ from django.urls import include, path
 from apps.blog.feeds import AtomLatestPostsFeed, LatestPostsFeed
 from apps.blog.views import (
     AuthorPostListView,
+    BlogPostReviewView,
     CategoryPostListView,
     ContentsListView,
     HomeView,
@@ -20,10 +21,17 @@ app_name = "blog"
 
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
-    path("user/<str:username>/posts", AuthorPostListView.as_view(), name="author_posts"),
-    path("category/<slug:slug>/posts", CategoryPostListView.as_view(), name="category_posts"),
+    path(
+        "user/<str:username>/posts", AuthorPostListView.as_view(), name="author_posts"
+    ),
+    path(
+        "category/<slug:slug>/posts",
+        CategoryPostListView.as_view(),
+        name="category_posts",
+    ),
     path("post/new/", PostCreateView.as_view(), name="post_create"),
     path("post/<slug:slug>/", PostDetailView.as_view(), name="post_detail"),
+    path("review/", BlogPostReviewView.as_view(), name="blog_review"),
     path("post/<slug:slug>/update/", PostUpdateView.as_view(), name="post_update"),
     path("post/<slug:slug>/delete/", PostDeleteView.as_view(), name="post_delete"),
     path("search/", SearchView.as_view(), name="search"),

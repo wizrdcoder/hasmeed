@@ -30,11 +30,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-home mr-2"></i>Home</a>
           </li>
-          {% comment %} <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'portfolio' %}">
               <i class="fa fa-briefcase mr-2"></i>Portfolio Projects
             </a>
-          </li> {% endcomment %}
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'cv' %}"><i class="fa fa-align-left mr-2"></i>CV</a>
           </li>
@@ -122,7 +122,7 @@
         {% endwith %}
 
         <!-- Dark Mode Toggle -->
-        {% comment %} {% include 'components/dark_mode_toggle.html' %} {% endcomment %}
+        {% include 'components/dark_mode_toggle.html' %}
       </div>
     </nav>
   </div>

@@ -138,7 +138,9 @@ class SearchResultsView(PostView):
         start_time = perf_counter()
         initial_query = format_html(self.request.GET.get("q"))
         if cleaned_query := search.cleanup_string(initial_query):
-            search_vector = SearchVector("title", weight="A") + SearchVector("content", weight="B")
+            search_vector = SearchVector("title", weight="A") + SearchVector(
+                "content", weight="B"
+            )
             search_query = SearchQuery(cleaned_query)
             search_rank = SearchRank(search_vector, search_query)
             qs = (
@@ -156,7 +158,9 @@ class SearchResultsView(PostView):
             )
             return qs
         else:
-            msg = "A blank search cannot be submitted. Please enter a valid search query."
+            msg = (
+                "A blank search cannot be submitted. Please enter a valid search query."
+            )
             messages.add_message(self.request, messages.INFO, msg)
             return self.queryset.none()
 
@@ -184,9 +188,17 @@ class PostDetailView(DetailView):
 
         for idx, post in enumerate(posts):
             if post.slug == self.kwargs["slug"]:
-                context["prev_post"] = posts[posts_count - 1] if idx == 0 else posts[idx - 1]
-                context["next_post"] = posts[0] if idx == posts_count - 1 else posts[idx + 1]
+                context["prev_post"] = (
+                    posts[posts_count - 1] if idx == 0 else posts[idx - 1]
+                )
+                context["next_post"] = (
+                    posts[0] if idx == posts_count - 1 else posts[idx + 1]
+                )
                 return context
+
+
+class BlogPostReviewView(TemplateView):
+    template_name = "blog_post_review.html"
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
