@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import os 
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-$5um761e&8mq8&#6_v45ejru-r%(xj(*3=ha%a!6otb=g*azgo
 # SECURITY WARNING: don't run     x with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["www.hasmeed.com"]
 
 # TEMPLATES = [
 #     {
@@ -159,5 +159,5 @@ DEFAULT_IMAGES_ROOT = os.path.join(BASE_DIR, "media/aa_project/static/default_im
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-RECAPTCHA_PUBLIC_KEY = 'MyRecaptchaKey123'
-RECAPTCHA_PRIVATE_KEY = 'MyRecaptchaPrivateKey456'
+RECAPTCHA_PUBLIC_KEY = "MyRecaptchaKey123"
+RECAPTCHA_PRIVATE_KEY = "MyRecaptchaPrivateKey456"
