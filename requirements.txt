@@ -9,7 +9,7 @@ mixer==7.2.2
 packaging==26.0
 pillow==12.1.1
 pluggy==1.6.0
-psycopg2==2.9.11
+psycopg2-binary==2.9.10
 Pygments==2.19.2
 pytest==9.0.2
 pytest-django==4.12.0
