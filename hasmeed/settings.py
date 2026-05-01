@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-$5um761e&8mq8&#6_v45ejru-r%(xj(*3=ha%a!6otb=g*azgo
 DEBUG = True
 
 # Need to update this later
-ALLOWED_HOSTS = ["www.hasmeed.com", "hasmeed.com", "localhost:8001"]
+ALLOWED_HOSTS = ["www.hasmeed.com", "hasmeed.com", "localhost", "127.0.0.1"]
 
 # TEMPLATES = [
 #     {
@@ -54,30 +54,53 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
     "django.contrib.humanize",
+    "django_otp",
+    "django_otp.plugins.otp_static",
+    "django_otp.plugins.otp_totp",
     "widget_tweaks",
+    "tinymce",
+    "two_factor",
+    "guardian",
+    "axes",
+    "shapeshifter",
+    "crispy_forms",
+    "crispy_bootstrap4",
+    "encrypted_model_fields",
     "django_recaptcha",
     "apps.portfolio",
     "apps.blog",
     "apps.contact",
+    "apps.account",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # Third party
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django_otp.middleware.OTPMiddleware",  # Third party
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "axes.middleware.AxesMiddleware",  # Third party
 ]
 
 ROOT_URLCONF = "hasmeed.urls"
+SITE_ID = 2
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "hasmeed/templates/"),
+            os.path.join(BASE_DIR, "hasmeed/templates/admin/"),
+            os.path.join(BASE_DIR, "hasmeed/templates/rest_framework/"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -103,6 +126,12 @@ DATABASES = {
     }
 }
 
+
+# Email Token Settings
+# FIELD_ENCRYPTION_KEY = os.environ["FIELD_ENCRYPTION_KEY"]
+FIELD_ENCRYPTION_KEY = "g6g9XQ0r3Y5nEzHJ7L4X9U1K8rI1s6xV6-Jk5vYzJ2I="
+EMAIL_CHALLENGE_EXPIRATION_IN_SECS = 60 * 5
+EMAIL_TOKEN_EXPIRATION_IN_SECS = 60 * 60 * 24 * 28
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -162,3 +191,88 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 RECAPTCHA_PUBLIC_KEY = "MyRecaptchaKey123"
 RECAPTCHA_PRIVATE_KEY = "MyRecaptchaPrivateKey456"
+
+
+# Tiny MCE Editor Config
+TINYMCE_SPELLCHECKER = True
+TINYMCE_DEFAULT_CONFIG = {
+    "cleanup_on_startup": True,
+    "custom_undo_redo_levels": 20,
+    "height": "800px",
+    "contextmenu": "formats | link image",
+    "menubar": True,
+    "statusbar": True,
+    "selector": "textarea",
+    "plugins": """
+            textcolor save link image media preview codesample contextmenu
+            table code lists fullscreen insertdatetime nonbreaking
+            contextmenu directionality searchreplace wordcount visualblocks
+            visualchars code fullscreen autolink lists charmap print hr
+            anchor pagebreak spellchecker emoticons help
+            """,
+    "toolbar1": """
+            fontselect fontsizeselect | bold italic underline | blockquote |
+            forecolor backcolor | alignleft alignright aligncenter alignjustify |
+            indent outdent
+            """,
+    "toolbar2": """
+            bullist numlist | table |
+            visualblocks visualchars | searchreplace |
+            hr pagebreak nonbreaking anchor | link image media |
+            codesample | code | charmap emoticons | pre fullscreen preview
+            """,
+    "codesample_global_prismjs": True,
+    "codesample_languages": [
+        {"text": "Python", "value": "python"},
+        {"text": "HTML/XML", "value": "html"},
+        {"text": "JavaScript", "value": "javascript"},
+        {"text": "Docker", "value": "docker"},
+        {"text": "Bash", "value": "bash"},
+        {"text": "SHELL", "value": "shell"},
+        {"text": "Git", "value": "git"},
+        {"text": "Markdown", "value": "markdown"},
+        {"text": "CSS", "value": "css"},
+        {"text": "SQL", "value": "sql"},
+        {"text": "Json", "value": "json"},
+        {"text": "Diff", "value": "diff"},
+        {"text": "Ruby", "value": "ruby"},
+        {"text": "YAML", "value": "yaml"},
+        {"text": "TOML", "value": "toml"},
+    ],
+    "font_formats": "Ubuntu Mono='Ubuntu Mono', monospace; \
+        sans-serif; Arial=arial,helvetica,sans-serif; \
+        Tahoma=tahoma,arial,helvetica,sans-serif; \
+        Verdana=verdana,geneva; \
+        Courier New=courier new,courier,monospace",
+}
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+AUTHENTICATION_BACKENDS = (
+    "axes.backends.AxesBackend",  # Third party
+    "django.contrib.auth.backends.ModelBackend",
+    "guardian.backends.ObjectPermissionBackend",  # Third party
+)
+
+LOGIN_URL = "blog:account:login"
+LOGIN_REDIRECT_URL = "blog:home"
+LOGOUT_REDIRECT_URL = "blog:home"
+
+
+# Django Two-Factor Auth Settings
+TWO_FACTOR_PATCH_ADMIN = False
+TWO_FACTOR_CALL_GATEWAY = "two_factor.gateways.fake.Fake"
+TWO_FACTOR_SMS_GATEWAY = "two_factor.gateways.fake.Fake"
+
+# Simple Captcha Settings
+RECAPTCHA_PUBLIC_KEY = ""  # os.environ["RECAPTCHA_PUBLIC_KEY"]
+RECAPTCHA_PRIVATE_KEY = ""  # os.environ["RECAPTCHA_PRIVATE_KEY"]
+
+# Django Two-Factor Auth Settings
+TWO_FACTOR_LOGIN_TIMEOUT = 300
+TWO_FACTOR_REMEMBER_COOKIE_AGE = 60 * 60 * 24 * 28
+
+DJANGO_THIRD_PARTY_AUX_APPS = [
+    "whitenoise.runserver_nostatic",
+]

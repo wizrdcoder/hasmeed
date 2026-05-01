@@ -1,0 +1,85 @@
+{% load ext_links %}
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-lg-5 col-md-7 col-12 about">
+          <div class="footer-col-inner">
+            <a class="theme-link" href="{% url 'about_me' %}"><h6>About Me</h6></a>
+            <p>I am a backend engineer focused on building robust, scalable, and reliable systems with Python and FastAPI. I care deeply about clean architecture, performance, and long term maintainability.</p>
+            <p>I design API driven platforms that are structured, efficient, and built to grow without breaking.</p>
+            <p>
+              <a class="more theme-link" href="{% url 'about_me' %}">
+                Learn more<i class="fas fa-long-arrow-alt-right ml-2"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-col col-lg-3 col-md-4 col-12 mr-lg-auto links">
+          <div class="footer-col-inner">
+            <h6>Links</h6>
+            <ul class="list-unstyled">
+              {% comment %} <li>
+                <a class="theme-link" href="{% url 'pages:portfolio' %}">
+                  <i class="fas fa-caret-right mr-2"></i>Portfolio
+                </a>
+              </li> {% endcomment %}
+              {% comment %} <li>
+                <a class="theme-link" href="{% url 'pages:reading_list' %}">
+                  <i class="fas fa-caret-right mr-2"></i>Reading List
+                </a>
+              </li>
+              <li>
+                <a class="theme-link" href="{% url 'cv:cv' %}">
+                  <i class="fas fa-caret-right mr-2"></i>CV
+                </a>
+              </li>
+              <li>
+                <a class="theme-link" href="{% url 'pages:privacy' %}">
+                  <i class="fas fa-caret-right mr-2"></i>Privacy Policy
+                </a>
+              </li> {% endcomment %}
+              <li>
+                <a class="theme-link" href="{% url 'portfolio' %}">
+                  <i class="fas fa-caret-right mr-2"></i>Portfolio
+                </a>
+              </li>
+              <li>
+                <a class="theme-link" href="{% url 'cv' %}">
+                  <i class="fas fa-caret-right mr-2"></i>CV
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-col col-lg-3 col-md-4 col-12 mr-lg-auto links">
+          <div class="footer-col-inner">
+            <h6>Get in Touch</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="theme-link" target="_blank" rel="noreferrer">
+                  <i class="fa fa-map-marker mr-3"></i>England, UK
+                </a>
+              </li>
+              <li>
+                <a class="theme-link"><i class="fas fa-mobile mr-3"></i>+44 (0)7564 548141</a>
+              </li>
+              <li>
+                <a href="{% email_me_link %}" class="theme-link">
+                  <i class="fa fa-envelope mr-3"></i>Email Me
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'contact:contact' %}" class="theme-link">
+                  <i class="fas fa-paper-plane mr-3"></i>Contact Form
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'bottom_bar.html' %}
+</footer>

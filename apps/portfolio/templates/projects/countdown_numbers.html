@@ -1,0 +1,24 @@
+<div class="isotope-item col-md-6 mb-5 pythonapp djangoapp">
+  <div class="card project-card">
+    <div class="row no-gutters">
+      <div class="col-lg-4 card-img-holder">
+        <img class="card-img" src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/countdown-numbers.jpg" alt="image">
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body">
+          <h5 class="card-title"><a href="{% url 'countdown_numbers:selection' %}" class="theme-link">Countdown: Numbers Game</a></h5>
+          <p class="card-text">Take on Rachel Riley in this simulation of the numbers game from Countdown.</p>
+        </div>
+      </div>
+    </div>
+    <div class="link-mask">
+      <a class="link-mask-link" href="{% url 'countdown_numbers:selection' %}"></a>
+      <div class="link-mask-text">
+        <a class="btn btn-secondary" href="{% url 'countdown_numbers:selection' %}">
+          <i class="fas fa-arrow-circle-right mr-2"></i>
+          Play Countdown Numbers Game
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

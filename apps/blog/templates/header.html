@@ -38,7 +38,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'cv' %}"><i class="fa fa-align-left mr-2"></i>CV</a>
           </li>
-          <li class="nav-item dropdown">
+          {% comment %} <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
             >
@@ -63,7 +63,7 @@
                 </a>
               {% endif %}
             </div>
-          </li> 
+          </li> {% endcomment %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contact:contact' %}">
               <i class="fa fa-envelope mr-2"></i>Contact
@@ -75,7 +75,7 @@
             </a>
           </li> 
           {% if user.profile.is_two_factor_authenticated %}
-             <li class="nav-item dropdown">
+            {% comment %} <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 >
@@ -92,9 +92,9 @@
                   <i class="fa fa-sign-out mr-2"></i>Logout
                 </a>
               </div>
-            </li> 
+            </li> {% endcomment %}
           {% else %}
-            <li class="nav-item dropdown">
+            {% comment %} <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
               >
@@ -108,7 +108,7 @@
                   <i class="fa fa-pencil-square-o mr-2"></i>Register
                 </a>
               </div>
-            </li>
+            </li> {% endcomment %}
           {% endif %}
         </ul>
       </div>

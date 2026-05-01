@@ -60,7 +60,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 class HomeView(PostView):
     """Drives the list of posts returned on the blog's home page"""
 
-    template_name = "home.html"
+    template_name = "blog/home.html"
     paginate_by = 6
     paginate_orphans = 3
 

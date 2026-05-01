@@ -40,5 +40,5 @@ urlpatterns = [
     path("contents/", ContentsListView.as_view(), name="contents"),
     path("sitenews/rss/", LatestPostsFeed(), name="post_feed"),
     path("sitenews/atom/", AtomLatestPostsFeed(), name="post_feed"),
-    # path("users/", include("users.urls", namespace="users")),
+    path("users/", include("apps.account.urls", namespace="users")),
 ]

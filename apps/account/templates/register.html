@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}{{ block.super }} | Register{% endblock title %}
+
+{% block content %}
+  <div class="container col-6 py-5">
+    <div class="auth-wrapper theme-bg-light mx-auto shadow p-5 rounded">
+      <h5 class="auth-heading text-center mb-2">Register an Account</h5>
+      <div class="auth-form-container text-left mx-auto">
+        <form method="POST">
+          {% csrf_token %}
+          <fieldset class="form-group">
+            
+            <!-- Username field with errors -->
+            <div class="mb-3">
+              {% render_field form.username class+="form-control" placeholder="Username" %}
+              {% if form.username.errors %}
+                <div class="text-danger small mt-1">
+                  {{ form.username.errors }}
+                </div>
+              {% endif %}
+            </div>
+            
+            <!-- Email field with errors -->
+            <div class="mb-3">
+              {% render_field form.email class+="form-control" placeholder="Email" %}
+              {% if form.email.errors %}
+                <div class="text-danger small mt-1">
+                  {{ form.email.errors }}
+                </div>
+              {% endif %}
+            </div>
+            
+            <!-- First Name field with errors -->
+            <div class="mb-3">
+              {% render_field form.first_name|attr:"required:true" class+="form-control" placeholder="First Name" %}
+              {% if form.first_name.errors %}
+                <div class="text-danger small mt-1">
+                  {{ form.first_name.errors }}
+                </div>
+              {% endif %}
+            </div>
+            
+            <!-- Last Name field with errors -->
+            <div class="mb-3">
+              {% render_field form.last_name|attr:"required:true" class+="form-control" placeholder="Last Name" %}
+              {% if form.last_name.errors %}
+                <div class="text-danger small mt-1">
+                  {{ form.last_name.errors }}
+                </div>
+              {% endif %}
+            </div>
+            
+            <!-- Password1 field with errors -->
+            <div class="mb-3">
+              {% render_field form.password1 class+="form-control" placeholder="Password" %}
+              {% if form.password1.errors %}
+                <div class="text-danger small mt-1">
+                  {{ form.password1.errors }}
+                </div>
+              {% endif %}
+            </div>
+            
+            <!-- Password2 field with errors -->
+            <div class="mb-3">
+              {% render_field form.password2 class+="form-control" placeholder="Re-enter Password" %}
+              {% if form.password2.errors %}
+                <div class="text-danger small mt-1">
+                  {{ form.password2.errors }}
+                </div>
+              {% endif %}
+            </div>
+            
+          </fieldset>
+          
+          <!-- Display non-field errors (if any) -->
+          {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+              {{ form.non_field_errors }}
+            </div>
+          {% endif %}
+          
+          <div class="extra mb-4 text-center text-muted">
+            By signing up, you agree to our
+            <a href="#" class="theme-link">privacy policy</a>.
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-block mx-auto">
+              <i class="fa fa-sign-in mr-1"></i>
+              Register Account
+            </button>
+          </div>
+        </form>
+
+        <!-- Messages block -->
+        <div class="messages mt-2">
+          {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+              <p {% if message.tags %} class="{{ message.tags }} signup-error-message small"{% endif %}>
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                  <b><u>Important:</u></b>
+                {% endif %}
+                {{ message|safe }}
+              </p>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="border-top">
+          <small class="text-muted">
+            Already have an account? <a href="{% url 'blog:users:login' %}" class="ml-2">Sign In</a>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -18,7 +18,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from apps.portfolio.views import AboutMeView, BackEndSkillsView, CVView, FrontEndSkillsView, InfrastructureSkillsView, PortfolioView, SiteHomeView, SkillsView, SoftwareSkillsView
+from apps.portfolio.views import (
+    AboutMeView,
+    BackEndSkillsView,
+    CVView,
+    FrontEndSkillsView,
+    InfrastructureSkillsView,
+    PortfolioView,
+    SiteHomeView,
+    SkillsView,
+    SoftwareSkillsView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -28,7 +38,9 @@ urlpatterns = [
     path("skills/back-end/", BackEndSkillsView.as_view(), name="back_end_skills"),
     path("skills/front-end/", FrontEndSkillsView.as_view(), name="front_end_skills"),
     path(
-        "skills/infrastructure/", InfrastructureSkillsView.as_view(), name="infrastructure_skills"
+        "skills/infrastructure/",
+        InfrastructureSkillsView.as_view(),
+        name="infrastructure_skills",
     ),
     path("skills/software/", SoftwareSkillsView.as_view(), name="software_skills"),
     path("about-me/", AboutMeView.as_view(), name="about_me"),

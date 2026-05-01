@@ -1,0 +1,24 @@
+<div class="isotope-item col-md-6 mb-5 djangoapp">
+  <div class="card project-card">
+    <div class="row no-gutters">
+      <div class="col-lg-4 card-img-holder">
+        <img class="card-img" src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/django-rest-framework.png" alt="image">
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body">
+          <h5 class="card-title"><a href="{% url 'api:posts' %}" class="theme-link">Blog API Endpoints</a></h5>
+          <p class="card-text">API endpoints for the Django blog enabling interface development.</p>
+        </div>
+      </div>
+    </div>
+    <div class="link-mask">
+      <a class="link-mask-link" href="{% url 'api:posts' %}"></a>
+      <div class="link-mask-text">
+        <a class="btn btn-secondary" href="{% url 'api:posts' %}">
+          <i class="fas fa-arrow-circle-right mr-2"></i>
+          View API Endpoints
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

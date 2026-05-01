@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}
+  {% if wizard.steps.current == 'auth' %}
+    {{ block.super }} | Login
+  {% else %}
+    {{ block.super }} | Two-Factor Token
+  {% endif %}
+{% endblock title %}
+
+{% block content %}
+  <div id="login" class="container col-6 py-5">
+    <div class="auth-wrapper theme-bg-light mx-auto shadow p-5 rounded">
+      {% if wizard.steps.current == 'auth' %}
+        <h5 class="auth-heading text-center mb-3">Log Into Your Account</h5>
+      {% elif wizard.steps.current == 'token' %}
+        <div class="auth-option text-left">
+          <h5 class="auth-heading text-center mb-3">Two-Step Verification</h5>
+          <p class="font-size-sm">
+            For added security, please enter the One Time Password (OTP) generated
+            by your authenticator app.
+          </p>
+        </div>
+      {% endif %}
+
+      <div class="auth-form-container text-left mx-auto">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <table class="mb-3">
+            {{ wizard.management_form }}
+            <div class="mb-3">
+              {% render_field wizard.form.username class+="form-control" placeholder="Username" %}
+            </div>
+            <div>
+              {% render_field wizard.form.password class+="form-control" placeholder="Password" %}
+            </div>
+            <div>
+              {% render_field wizard.form.otp_token class+="form-control" placeholder="Enter token from authenticator app..." %}
+            </div>
+          </table>
+
+          {# hidden submit button to enable [enter] key #}
+          <input type="submit" value="" class="d-none" />
+
+          {% include 'two_factor/_wizard_actions.html' %}
+        </form>
+
+        <!-- Redirection Management Links -->
+        {% if wizard.steps.current == 'auth' %}
+          <p class="mt-3">
+            <small class="text-muted">
+              <a class="theme-link" href="{% url 'blog:users:password_reset_form' %}">
+                Forgotten Password?
+              </a>
+            </small>
+          </p>
+          <div class="auth-option text-left pt-1">No Account? Register
+            <a class="theme-link" href="{% url 'blog:users:register' %}" >Here</a>
+          </div>
+        {% endif %}
+
+        <!-- Messages block -->
+        {% if messages %}
+          <div class="messages mt-2">
+            {% for message in messages %}
+              <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+                <p {% if message.tags %} class="{{ message.tags }} signup-error-message small"{% endif %}>
+                  {{ message }}
+                </p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <!-- Form Errors Handling -->
+        {% if wizard.form.errors and not messages %}
+          <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+            {% for key, value in wizard.form.errors.items %}
+              {% for validation_error in value.data %}
+                {% if validation_error.code == 'invalid_token' %}
+                  <p class="small no-bullets">{{ validation_error.message }}</p>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

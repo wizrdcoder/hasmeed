@@ -1,0 +1,47 @@
+{% load ext_links %}
+
+<div class="isotope-item col-md-6 mb-5 datasciencework">
+  <div class="card project-card">
+    <div class="row no-gutters">
+      <div class="col-lg-4 card-img-holder">
+        <img
+          src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/data-science.png"
+          class="card-img"
+          alt="image"
+        />
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{% data_science_portfolio_notebooks %}"
+               class="theme-link"
+               target="_blank"
+               rel="noreferrer"
+            >
+              Data Science
+            </a>
+          </h5>
+          <p class="card-text">
+            Explore fascinating datasets using Python's Data Science libraries.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="link-mask">
+      <a
+        class="link-mask-link"
+        href="{% data_science_portfolio_notebooks %}"
+        target="_blank"
+      ></a>
+      <div class="link-mask-text">
+        <a href="{% data_science_portfolio_notebooks %}"
+           class="btn btn-secondary"
+           target="_blank"
+           rel="noreferrer"
+        >
+          <i class="fas fa-arrow-circle-right mr-2"></i>View Jupyter Notebooks
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
