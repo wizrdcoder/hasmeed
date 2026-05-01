@@ -13,10 +13,10 @@
     <title>{% block title %}HameedYusuf.dev{% endblock title %}</title>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/favicon/apple-touch-icon.png' %}" />
+    {% comment %} <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/favicon/apple-touch-icon.png' %}" />
     <link rel="shortcut icon" type="image/png" sizes="32x32" href="{% static 'assets/favicon/favicon-32x32.png' %}" />
     <link rel="shortcut icon" type="image/png" sizes="16x16" href="{% static 'assets/favicon/favicon-16x16.png' %}" />
-    <link rel="manifest" href="{% static 'assets/favicon/site.webmanifest' %}" />
+    <link rel="manifest" href="{% static 'assets/favicon/site.webmanifest' %}" /> {% endcomment %}
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -35,6 +35,7 @@
 
     <!-- Site Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{% static 'assets/css/theme-3.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/modern-redesign.css' %}" />
 
     <!-- Extra meta data insertions -->
     {% block additional_head %}{% endblock additional_head %}
@@ -44,7 +45,7 @@
   </head>
 
   <body>
-    <!-- Sidebar Header -->
+    <!-- Site Header -->
     {% include 'header.html' %}
 
     <div class="main-wrapper">

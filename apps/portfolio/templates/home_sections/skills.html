@@ -2,62 +2,59 @@
 
 <section class="overview-section p-3 p-lg-5">
   <div class="container">
-    <h2 class="section-title font-weight-bold mb-3">Skills</h2>
-    <div class="section-intro mb-2">
-      <p>
-        This section provides additional context relating to my skills.
-        Click the links below to read more in a particular domain of expertise.
-      </p>
-    </div>
-
+    <h2 class="section-title">Skills</h2>
+    <p class="section-subtitle mb-5">Tools, frameworks and disciplines I use to build and ship strong backend products and polished websites.</p>
     <div class="row">
-      <!-- Web Development - Back End -->
-      <div class="item col-6 col-lg-3">
-        <div class="item-inner">
+      <div class="col-12 col-md-6 col-lg-3 mb-4 fade-up">
+        <a href="{% url 'back_end_skills' %}" class="item-inner interactive-card">
           <div class="item-icon">
-            <i class="fab fa-python mr-2"></i>
-            <span class="iconify mr-2" data-icon="cib:django" data-inline="false"></span>
-            <img src="{% static 'assets/images/pytest-icon.png' %}" class="mr-2" alt="">
-            <span class="iconify mr-2" data-icon="logos:postgresql" data-inline="false"></span>
+            <i class="fab fa-python"></i>
+            <span class="iconify" data-icon="cib:django" data-inline="false"></span>
+            <img src="{% static 'assets/images/pytest-icon.png' %}" alt="pytest">
           </div>
-          {% comment %} <a class="theme-link" href="{% url 'pages:back_end_skills' %}"><h3 class="item-title">Back End</h3></a> {% endcomment %}
-        </div>
+          <div class="item-content">
+            <h3 class="item-title">Backend</h3>
+            <p class="item-copy">Django, FastAPI, REST APIs, testing, and database modeling for reliable systems.</p>
+          </div>
+        </a>
       </div>
-      <!-- Web Development - Front End -->
-      <!-- <div class="item col-6 col-lg-3">
-        <div class="item-inner">
+      <div class="col-12 col-md-6 col-lg-3 mb-4 fade-up">
+        <a href="{% url 'infrastructure_skills' %}" class="item-inner interactive-card">
           <div class="item-icon">
-            <i class="fab fa-js mr-2"></i>
-            <i class="fab fa-html5 mr-2"></i>
-            <i class="fab fa-sass mr-2"></i>
-            <i class="fab fa-bootstrap mr-2"></i>
+            <i class="fa fa-server"></i>
+            <i class="fab fa-docker"></i>
+            <i class="fab fa-git"></i>
           </div>
-          {% comment %} <a class="theme-link" href="{% url 'pages:front_end_skills' %}"><h3 class="item-title">Front End</h3></a> {% endcomment %}
-        </div>
-      </div> -->
-      <!-- Infrastructure-->
-      <div class="item col-6 col-lg-3">
-        <div class="item-inner">
-          <div class="item-icon">
-            <i class="fa fa-terminal mr-2"></i>
-            <i class="fab fa-docker mr-2"></i>
-            <i class="fab fa-git mr-2"></i>
-            <i class="fab fa-github-square mr-2"></i>
+          <div class="item-content">
+            <h3 class="item-title">Infrastructure</h3>
+            <p class="item-copy">Docker, deployments, CI/CD, monitoring, and automation for production-ready apps.</p>
           </div>
-          {% comment %} <a class="theme-link" href="{% url 'pages:infrastructure_skills' %}"><h3 class="item-title">Infrastructure</h3></a> {% endcomment %}
-        </div>
+        </a>
       </div>
-      <!-- Software-->
-      <div class="item col-6 col-lg-3">
-        <div class="item-inner">
+      <div class="col-12 col-md-6 col-lg-3 mb-4 fade-up">
+        <a href="{% url 'software_skills' %}" class="item-inner interactive-card">
           <div class="item-icon">
-            <img class="mb-2 mr-2" src="{% static 'assets/icons/custom/vscode.svg' %}">
-            <img class="mb-2 mr-2" src="{% static 'assets/icons/custom/datagrip.svg' %}">
-            <i class="fab fa-firefox mr-2"></i>
-            <img class="mb-2 mr-2" src="{% static 'assets/icons/custom/jupyter.svg' %}">
+            <img class="mr-2" src="{% static 'assets/icons/custom/vscode.svg' %}" alt="VSCode icon">
+            <img class="mr-2" src="{% static 'assets/icons/custom/jupyter.svg' %}" alt="Jupyter icon">
           </div>
-          {% comment %} <a class="theme-link" href="{% url 'pages:software_skills' %}"><h3 class="item-title">Software</h3></a> {% endcomment %}
-        </div>
+          <div class="item-content">
+            <h3 class="item-title">Productivity</h3>
+            <p class="item-copy">Efficient development with VS Code, GitHub, and tooling for clean team workflows.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 mb-4 fade-up">
+        <a href="{% url 'front_end_skills' %}" class="item-inner interactive-card">
+          <div class="item-icon">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+          </div>
+          <div class="item-content">
+            <h3 class="item-title">Frontend</h3>
+            <p class="item-copy">Modern responsive UI design, Bootstrap, Sass and lightweight JavaScript interactions.</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>

@@ -1,111 +1,57 @@
 <section class="featured-section p-3 p-lg-5">
   <div class="container">
-    <h2 class="section-title font-weight-bold mb-5">Featured Projects</h2>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle mb-5">A selection of recent work showing backend systems, polished UX, and API-first architecture.</p>
     <div class="row">
-
-      <!-- Blog App -->
-      <div class="col-md-6 mb-5">
-        <div class="card project-card">
-          <div class="row no-gutters">
-            <div class="col-lg-4 card-img-holder">
-              <img src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/blog.jpg" class="card-img" alt="image">
-            </div>
-            <div class="col-lg-8">
-              <div class="card-body">
-                {% comment %} <h5 class="card-title"><a href="{% url 'blog:home' %}" class="theme-link">Blog</a></h5> {% endcomment %}
-                <p class="card-text">A fully featured CRUD application with authentication and its content about various programming topics.</p>
-              </div>
-            </div>
+      <div class="col-lg-6 mb-5 fade-up">
+        <div class="project-card">
+          <div class="card-img-holder">
+            <img src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/blog.jpg" class="card-img" alt="Blog project">
           </div>
-          <div class="link-mask">
-            {% comment %} <a class="link-mask-link" href="{% url 'blog:home' %}"></a> {% endcomment %}
-            <div class="link-mask-text">
-              {% comment %} <a class="btn btn-secondary" href="{% url 'blog:home' %}"> {% endcomment %}
-                <i class="fas fa-arrow-circle-right mr-2"></i>View Blog
-              </a>
-            </div>
+          <div class="card-body p-4">
+            <h5 class="card-title">Full-featured Blog Platform</h5>
+            <p class="card-text">A modern Django blog with authentication, dynamic content, responsive design and search-ready listing pages.</p>
+            <a class="theme-link" href="{% url 'blog:home' %}">Explore the blog <i class="fas fa-arrow-right ml-2"></i></a>
           </div>
         </div>
       </div>
-
-      <!-- Blog App's API Endpoints -->
-      <div class="col-md-6 mb-5">
-        <div class="card project-card">
-          <div class="row no-gutters">
-            <div class="col-lg-4 card-img-holder">
-              <img src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/django-rest-framework.png" class="card-img" alt="image">
-            </div>
-            <div class="col-lg-8">
-              <div class="card-body">
-                {% comment %} <h5 class="card-title"><a href="{% url 'api:posts' %}" class="theme-link">Blog App's API</a></h5> {% endcomment %}
-                <p class="card-text">View the browsable API endpoints for the Blog application.</p>
-              </div>
-            </div>
+      <div class="col-lg-6 mb-5 fade-up">
+        <div class="project-card">
+          <div class="card-img-holder">
+            <img src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/django-rest-framework.png" class="card-img" alt="Django REST API">
           </div>
-          <div class="link-mask">
-            {% comment %} <a class="link-mask-link" href="{% url 'api:posts' %}"></a> {% endcomment %}
-            <div class="link-mask-text">
-              {% comment %} <a class="btn btn-secondary" href="{% url 'api:posts' %}"> {% endcomment %}
-                <i class="fas fa-arrow-circle-right mr-2"></i>View API Endpoints
-              </a>
-            </div>
+          <div class="card-body p-4">
+            <h5 class="card-title">API-first Backend Services</h5>
+            <p class="card-text">RESTful endpoints built with Django REST Framework, designed for integration, performance, and secure access control.</p>
+            <a class="theme-link" href="{% url 'portfolio' %}">View portfolio APIs <i class="fas fa-arrow-right ml-2"></i></a>
           </div>
         </div>
       </div>
-
-      <!-- Countdown Letters Game App -->
-      <div class="col-md-6 mb-5">	
-        <div class="card project-card">
-          <div class="row no-gutters">
-            <div class="col-lg-4 card-img-holder">
-              <img src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/countdown-letters.jpg" class="card-img" alt="image">
-            </div>
-            <div class="col-lg-8">
-              <div class="card-body">
-                {% comment %} <h5 class="card-title"><a href="{% url 'countdown_letters:selection' %}" class="theme-link">Countdown: Letters Game</a></h5> {% endcomment %}
-                <p class="card-text">Take on Susie Dent at Countdown's Letters Game. 
-                Fair warning though... Susie has been studying dictionaries like Johnny 5.</p>
-              </div>
-            </div>
+      <div class="col-lg-6 mb-5 fade-up">
+        <div class="project-card">
+          <div class="card-img-holder">
+            <img src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/countdown-letters.jpg" class="card-img" alt="Countdown letters game">
           </div>
-          <div class="link-mask">
-            {% comment %} <a class="link-mask-link" href="{% url 'countdown_letters:selection' %}"></a> {% endcomment %}
-            <div class="link-mask-text">
-              {% comment %} <a class="btn btn-secondary" href="{% url 'countdown_letters:selection' %}"> {% endcomment %}
-                <i class="fas fa-arrow-circle-right mr-2"></i>Play Countdown Letters Game
-              </a>
-            </div>
+          <div class="card-body p-4">
+            <h5 class="card-title">Interactive Game Interfaces</h5>
+            <p class="card-text">Immersive Django-powered mini apps with playful UI and game logic, built to be fast, responsive, and engaging.</p>
+            {% comment %} <a class="theme-link" href="{% url 'countdown_letters:selection' %}">Play a project <i class="fas fa-arrow-right ml-2"></i></a> {% endcomment %}
           </div>
         </div>
       </div>
-
-      <!-- Countdown Numbers Game App -->
-      <div class="col-md-6 mb-5">
-        <div class="card project-card">
-          <div class="row no-gutters">
-            <div class="col-lg-4 card-img-holder">
-              <img src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/countdown-numbers.jpg" class="card-img" alt="image">
-            </div>
-            <div class="col-lg-8">
-              <div class="card-body">
-                {% comment %} <h5 class="card-title"><a href="{% url 'countdown_numbers:selection' %}" class="theme-link">Countdown: Numbers Game</a></h5> {% endcomment %}
-                <p class="card-text">Take on Rachel Riley at Countdown's Numbers Game. 
-                Fair warning though... Rachel has been racing against Pandas and NumPy.</p>
-              </div>
-            </div>
+      <div class="col-lg-6 mb-5 fade-up">
+        <div class="project-card">
+          <div class="card-img-holder">
+            <img src="https://wl-portfolio.s3.eu-west-2.amazonaws.com/images/projects/countdown-numbers.jpg" class="card-img" alt="Countdown numbers game">
           </div>
-          <div class="link-mask">
-            {% comment %} <a class="link-mask-link" href="{% url 'countdown_numbers:selection' %}"></a> {% endcomment %}
-            <div class="link-mask-text">
-              {% comment %} <a class="btn btn-secondary" href="{% url 'countdown_numbers:selection' %}"> {% endcomment %}
-                <i class="fas fa-arrow-circle-right mr-2"></i>Play Countdown Numbers Game
-              </a>
-            </div>
+          <div class="card-body p-4">
+            <h5 class="card-title">Data-driven Interfaces</h5>
+            <p class="card-text">Applications that blend calculations, data flow and smart UI patterns to deliver polished interactive experiences.</p>
+            <a class="theme-link" href="{% url 'portfolio' %}">Explore more projects <i class="fas fa-arrow-right ml-2"></i></a>
           </div>
         </div>
       </div>
-
     </div>
-    <div class="text-center py-3"><a href="{% url 'portfolio' %}" class="btn btn-primary"><i class="fas fa-arrow-alt-circle-right mr-2"></i>View Portfolio</a></div>
+    <div class="text-center py-3"><a href="{% url 'portfolio' %}" class="btn btn-gradient">Browse the full portfolio</a></div>
   </div>
 </section>
