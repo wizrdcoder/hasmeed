@@ -1,5 +1,6 @@
 from django.urls import include, path
 
+from apps.blog.api import CategoryListAPIView, PostDetailAPIView, PostListAPIView
 from apps.blog.feeds import AtomLatestPostsFeed, LatestPostsFeed
 from apps.blog.views import (
     AuthorPostListView,
@@ -41,4 +42,9 @@ urlpatterns = [
     path("sitenews/rss/", LatestPostsFeed(), name="post_feed"),
     path("sitenews/atom/", AtomLatestPostsFeed(), name="post_feed"),
     path("users/", include("apps.account.urls", namespace="users")),
+    # API
+    path("api-auth/", include("rest_framework.urls")),
+    path("api/posts/", PostListAPIView.as_view(), name="api_posts"),
+    path("api/posts/<int:pk>/", PostDetailAPIView.as_view(), name="api_post_detail"),
+    path("api/categories/", CategoryListAPIView.as_view(), name="api_blog_categories"),
 ]

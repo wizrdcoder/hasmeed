@@ -2,24 +2,29 @@ from django.shortcuts import render
 from django.views.generic import ListView, TemplateView
 from django.views.generic.base import RedirectView
 
+from apps.blog.models import Post
+
 
 class SiteHomeView(ListView):
     template_name = "home.html"
-    context_object_name = "projects"
+    context_object_name = "posts"
+    queryset = Post.published.all()[:3]
 
-    def get_queryset(self):
-        return []
+    # def get_queryset(self):
+    #     return []
 
 
 class PortfolioView(TemplateView):
     template_name = "portfolio.html"
 
+
 class AboutMeView(TemplateView):
     template_name = "about_me.html"
-    
+
+
 class CVView(TemplateView):
     template_name = "cv.html"
-    
+
 
 # Skills
 class SkillsView(RedirectView):

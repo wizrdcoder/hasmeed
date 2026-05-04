@@ -38,7 +38,10 @@ class Profile(models.Model):
 
     @property
     def initials(self):
-        inits = f"{self.user.first_name[0]}{self.user.last_name[0]}"
+        try:
+            inits = f"{self.user.first_name[0]}{self.user.last_name[0]}"
+        except IndexError:
+            inits = ""
         return inits.upper().strip()
 
     @property
